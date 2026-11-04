@@ -98,6 +98,15 @@
     color: #999;
     margin-top: 36px;
   }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 8px auto 16px;
+    background: #fff;
+    border: 1px solid #e8e1d2;
+    border-radius: 4px;
+  }
 </style>
 </head>
 <body>
@@ -158,6 +167,366 @@
 </table></div>
 <p>今天一共成交 16 笔，买入 $1,190.80，卖出 $219.76，手续费 $25.10。截至 14:16（美东时间）现金余额 $904.29，持有 9 个市场，按当前买价估算浮盈约 +$196.13，主要来自 Mississippi 民主党（+$198.66）。</p>
 </div>
+
+<h2>Kalshi 资金、盈亏与持仓分析（2026-11-04）</h2>
+
+<p class="source-note">数据生成时间：2026-11-04 约 14:45（美东），全部来自 Kalshi 只读 API。持仓价格是生成那一刻的报价，之后会变。</p>
+
+<h2>一、入金记录</h2>
+<div class="section">
+<p><img alt="入金记录" src="../charts/deposits.png" /></p>
+<p>数据来自 Kalshi 的 <code>GET /portfolio/deposits</code> 和 <code>GET /portfolio/withdrawals</code> 接口，时间为美东时间：</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>时间（美东）</th>
+<th>方式</th>
+<th style="text-align: right;">金额</th>
+<th style="text-align: right;">手续费</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2026-11-03 13:05</td>
+<td>借记卡</td>
+<td style="text-align: right;">$50.00</td>
+<td style="text-align: right;">$0</td>
+<td>已到账</td>
+</tr>
+<tr>
+<td>2026-11-03 20:28</td>
+<td>银行转账 ACH</td>
+<td style="text-align: right;">$500.00</td>
+<td style="text-align: right;">$0</td>
+<td>已到账</td>
+</tr>
+<tr>
+<td>2026-11-03 21:17</td>
+<td>银行转账 ACH</td>
+<td style="text-align: right;">$1,000.00</td>
+<td style="text-align: right;">$0</td>
+<td>已到账</td>
+</tr>
+<tr>
+<td>2026-11-03 21:25</td>
+<td>银行转账 ACH</td>
+<td style="text-align: right;">$450.00</td>
+<td style="text-align: right;">$0</td>
+<td>已到账</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>合计入金 $2,000.00，四笔都在 11 月 3 日。没有出金记录。</strong></p>
+</div>
+
+<h2>二、已实现盈亏曲线</h2>
+<div class="section">
+<p><img alt="盈亏曲线" src="../charts/pnl_curve.png" /></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>日期（美东）</th>
+<th style="text-align: right;">结算盈亏</th>
+<th style="text-align: right;">卖出平仓盈亏</th>
+<th style="text-align: right;">当日已实现</th>
+<th style="text-align: right;">累计</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11 月 3 日</td>
+<td style="text-align: right;">+$23.94（4 个市场结算）</td>
+<td style="text-align: right;">$0</td>
+<td style="text-align: right;"><strong>+$23.94</strong></td>
+<td style="text-align: right;">+$23.94</td>
+</tr>
+<tr>
+<td>11 月 4 日（截至目前）</td>
+<td style="text-align: right;">+$201.10（12 个市场结算）</td>
+<td style="text-align: right;">-$236.80（Mississippi 共和党）</td>
+<td style="text-align: right;"><strong>-$35.70</strong></td>
+<td style="text-align: right;"><strong>-$11.76</strong></td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>账户历史一共只有 2 天：第一笔成交在 11 月 3 日 13:07（美东），共 97 笔成交、16 个已结算市场。Historical 接口（<code>/historical/fills</code>、<code>/historical/positions</code>）没有返回记录，因为账户是在归档截止日（2026-09-05）之后开的。</li>
+<li>口径和每日报告一样：都已扣除手续费。结算盈亏 = 结算赔付 − 成本 − 手续费；卖出平仓用平均成本法计算。</li>
+<li>每日数据：<code>charts/pnl_daily.csv</code></li>
+</ul>
+<p><strong>对账</strong>：现金 $844.32 + 持仓按买价估算的市值 $1,331.57 = $2,175.89。减去入金 $2,000 后，账户整体约 <strong>+$175.89</strong>。这个数等于已实现 -$11.76 + 浮动 +$202.63 − 持仓已付手续费 $14.98，能对上。</p>
+</div>
+
+<h2>三、当前持仓与到期时间</h2>
+<div class="section">
+<p><img alt="持仓" src="../charts/positions.png" /></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>预计到期（美东）</th>
+<th>市场</th>
+<th>押注</th>
+<th style="text-align: right;">份数</th>
+<th style="text-align: right;">成本</th>
+<th style="text-align: right;">均价</th>
+<th>买价/卖价</th>
+<th style="text-align: right;">估算市值</th>
+<th style="text-align: right;">浮动盈亏</th>
+<th style="text-align: right;">赢了赔付</th>
+<th style="text-align: right;">赢了净赚*</th>
+<th style="text-align: right;">隐含胜率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>11/03 22:00（比赛已过）</td>
+<td>Toledo vs Sacramento St（NCAA 橄榄球）</td>
+<td>YES Toledo 赢</td>
+<td style="text-align: right;">10.48</td>
+<td style="text-align: right;">$9.96</td>
+<td style="text-align: right;">$0.950</td>
+<td>0.94/0.95</td>
+<td style="text-align: right;">$9.85</td>
+<td style="text-align: right;">-$0.10</td>
+<td style="text-align: right;">$10.48</td>
+<td style="text-align: right;">+$0.49</td>
+<td style="text-align: right;">94.5%</td>
+</tr>
+<tr>
+<td>11/04 15:45</td>
+<td>AEK Athens vs Real Madrid（欧冠）</td>
+<td>NO：AEK 不赢</td>
+<td style="text-align: right;">107.00</td>
+<td style="text-align: right;">$98.44</td>
+<td style="text-align: right;">$0.920</td>
+<td>0.96/0.97</td>
+<td style="text-align: right;">$102.72</td>
+<td style="text-align: right;">+$4.28</td>
+<td style="text-align: right;">$107.00</td>
+<td style="text-align: right;">+$8.01</td>
+<td style="text-align: right;">96.5%</td>
+</tr>
+<tr>
+<td>11/04 16:30</td>
+<td>Balkan Botevgrad vs KK Bosna（欧洲杯篮球）</td>
+<td>NO：Balkan 不赢</td>
+<td style="text-align: right;">14.22</td>
+<td style="text-align: right;">$9.78</td>
+<td style="text-align: right;">$0.688</td>
+<td>0.70/0.71</td>
+<td style="text-align: right;">$9.95</td>
+<td style="text-align: right;">+$0.17</td>
+<td style="text-align: right;">$14.22</td>
+<td style="text-align: right;">+$4.22</td>
+<td style="text-align: right;">70.5%</td>
+</tr>
+<tr>
+<td>11/04 17:45</td>
+<td>Wrexham vs Middlesbrough（英冠）</td>
+<td>NO：Wrexham 不赢</td>
+<td style="text-align: right;">12.47</td>
+<td style="text-align: right;">$9.85</td>
+<td style="text-align: right;">$0.790</td>
+<td>0.78/0.79</td>
+<td style="text-align: right;">$9.73</td>
+<td style="text-align: right;">-$0.12</td>
+<td style="text-align: right;">$12.47</td>
+<td style="text-align: right;">+$2.47</td>
+<td style="text-align: right;">78.5%</td>
+</tr>
+<tr>
+<td>11/04 21:00</td>
+<td>LYON vs Gen.G（英雄联盟）</td>
+<td>YES Gen.G 赢</td>
+<td style="text-align: right;">108.09</td>
+<td style="text-align: right;">$99.44</td>
+<td style="text-align: right;">$0.920</td>
+<td>0.91/0.92</td>
+<td style="text-align: right;">$98.36</td>
+<td style="text-align: right;">-$1.08</td>
+<td style="text-align: right;">$108.09</td>
+<td style="text-align: right;">+$8.09</td>
+<td style="text-align: right;">91.5%</td>
+</tr>
+<tr>
+<td>11/04 22:00</td>
+<td>Longwood vs Saint Joseph's（NCAA 篮球）</td>
+<td>YES St. Joseph's 赢</td>
+<td style="text-align: right;">11.64</td>
+<td style="text-align: right;">$9.89</td>
+<td style="text-align: right;">$0.850</td>
+<td>0.83/0.84</td>
+<td style="text-align: right;">$9.66</td>
+<td style="text-align: right;">-$0.23</td>
+<td style="text-align: right;">$11.64</td>
+<td style="text-align: right;">+$1.64</td>
+<td style="text-align: right;">83.5%</td>
+</tr>
+<tr>
+<td>11/04 22:00</td>
+<td>同一场</td>
+<td>NO：Longwood 不赢</td>
+<td style="text-align: right;">11.64</td>
+<td style="text-align: right;">$9.89</td>
+<td style="text-align: right;">$0.850</td>
+<td>0.84/0.85</td>
+<td style="text-align: right;">$9.78</td>
+<td style="text-align: right;">-$0.12</td>
+<td style="text-align: right;">$11.64</td>
+<td style="text-align: right;">+$1.64</td>
+<td style="text-align: right;">84.5%</td>
+</tr>
+<tr>
+<td>11/04 22:30（17:30 公布）</td>
+<td>巴西央行 11 月议息</td>
+<td>YES 维持利率</td>
+<td style="text-align: right;">24.08</td>
+<td style="text-align: right;">$19.75</td>
+<td style="text-align: right;">$0.820</td>
+<td>0.78/0.82</td>
+<td style="text-align: right;">$18.78</td>
+<td style="text-align: right;">-$0.96</td>
+<td style="text-align: right;">$24.08</td>
+<td style="text-align: right;">+$4.09</td>
+<td style="text-align: right;">80%</td>
+</tr>
+<tr>
+<td>11/04 23:30</td>
+<td>Universitario vs Sport Boys（秘鲁甲）</td>
+<td>NO：Sport Boys 不赢</td>
+<td style="text-align: right;">11.26</td>
+<td style="text-align: right;">$9.91</td>
+<td style="text-align: right;">$0.880</td>
+<td>0.87/0.88</td>
+<td style="text-align: right;">$9.80</td>
+<td style="text-align: right;">-$0.11</td>
+<td style="text-align: right;">$11.26</td>
+<td style="text-align: right;">+$1.27</td>
+<td style="text-align: right;">87.5%</td>
+</tr>
+<tr>
+<td>11/05 00:30</td>
+<td>Dallas vs San Antonio（NBA）</td>
+<td>YES 马刺赢</td>
+<td style="text-align: right;">60.21</td>
+<td style="text-align: right;">$49.37</td>
+<td style="text-align: right;">$0.820</td>
+<td>0.83/0.84</td>
+<td style="text-align: right;">$49.97</td>
+<td style="text-align: right;">+$0.60</td>
+<td style="text-align: right;">$60.21</td>
+<td style="text-align: right;">+$10.22</td>
+<td style="text-align: right;">83.5%</td>
+</tr>
+<tr>
+<td>11/05 15:45</td>
+<td>Milan vs Ferencváros（欧联）</td>
+<td>NO：Ferencváros 不赢</td>
+<td style="text-align: right;">11.03</td>
+<td style="text-align: right;">$9.93</td>
+<td style="text-align: right;">$0.900</td>
+<td>0.89/0.90</td>
+<td style="text-align: right;">$9.82</td>
+<td style="text-align: right;">-$0.11</td>
+<td style="text-align: right;">$11.03</td>
+<td style="text-align: right;">+$1.03</td>
+<td style="text-align: right;">89.5%</td>
+</tr>
+<tr>
+<td>2027/01/04 10:00</td>
+<td>Alaska 参议院</td>
+<td>YES 民主党</td>
+<td style="text-align: right;">213.46</td>
+<td style="text-align: right;">$199.06</td>
+<td style="text-align: right;">$0.933</td>
+<td>0.921/0.922</td>
+<td style="text-align: right;">$196.60</td>
+<td style="text-align: right;">-$2.46</td>
+<td style="text-align: right;">$213.46</td>
+<td style="text-align: right;">+$13.46</td>
+<td style="text-align: right;">92.2%</td>
+</tr>
+<tr>
+<td>2027/01/04 10:00</td>
+<td>Mississippi 参议院</td>
+<td>YES 民主党（Scott Colom）</td>
+<td style="text-align: right;">638.47</td>
+<td style="text-align: right;">$389.37</td>
+<td style="text-align: right;">$0.610</td>
+<td>0.927/0.929</td>
+<td style="text-align: right;">$591.86</td>
+<td style="text-align: right;"><strong>+$202.50</strong></td>
+<td style="text-align: right;">$638.47</td>
+<td style="text-align: right;">+$238.47</td>
+<td style="text-align: right;">92.8%</td>
+</tr>
+<tr>
+<td>2027/01/04 12:00</td>
+<td>FL-26 众议院</td>
+<td>YES 共和党（Díaz-Balart）</td>
+<td style="text-align: right;">207.81</td>
+<td style="text-align: right;">$199.42</td>
+<td style="text-align: right;">$0.960</td>
+<td>0.950/0.959</td>
+<td style="text-align: right;">$197.42</td>
+<td style="text-align: right;">-$2.00</td>
+<td style="text-align: right;">$207.81</td>
+<td style="text-align: right;">+$7.82</td>
+<td style="text-align: right;">95.4%</td>
+</tr>
+<tr>
+<td>最晚 2027/11/03 11:00（选举已过）</td>
+<td>Maine 参议院民主党胜幅 ≥0.5 个百分点</td>
+<td>YES</td>
+<td style="text-align: right;">7.29</td>
+<td style="text-align: right;">$4.88</td>
+<td style="text-align: right;">$0.670</td>
+<td>0.997/0.998</td>
+<td style="text-align: right;">$7.27</td>
+<td style="text-align: right;">+$2.38</td>
+<td style="text-align: right;">$7.29</td>
+<td style="text-align: right;">+$2.29</td>
+<td style="text-align: right;">99.8%</td>
+</tr>
+<tr>
+<td><strong>合计（15 个市场）</strong></td>
+<td></td>
+<td></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong>$1,128.94</strong></td>
+<td style="text-align: right;"></td>
+<td></td>
+<td style="text-align: right;"><strong>$1,331.57</strong></td>
+<td style="text-align: right;"><strong>+$202.63</strong></td>
+<td style="text-align: right;"><strong>$1,449.15</strong></td>
+<td style="text-align: right;"><strong>+$305.23</strong></td>
+<td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table></div>
+<p>*赢了净赚 = 赔付 − 成本 − 该仓位已付手续费。隐含胜率取你这一边买价和卖价的中间值。"预计到期"取 Kalshi 的 <code>expected_expiration_time</code>；Maine 那个市场没有这个字段，所以用最晚到期时间。所有市场都允许提前结算。</p>
+<h3>分析</h3>
+<p><strong>总敞口。</strong> 持仓总成本 $1,128.94，按当前买价能卖 $1,331.57，浮盈 +$202.63（还没扣卖出手续费）。如果全部押中，赔付 $1,449.15，扣掉成本和手续费还能再赚 $305.23；最坏情况是全部押错，亏掉 $1,128.94。账上另有现金 $844.32。</p>
+<p><strong>什么时候到期：</strong></p>
+<ul>
+<li><strong>今天（11/4）到明天凌晨 0:30：</strong> 8 个体育和利率市场，成本 $266.96。最大的两笔是欧冠 AEK 不赢（$98.44，15:45 开赛）和英雄联盟 Gen.G 赢（$99.44，21:00）。巴西央行美东 17:30 公布利率决定，17:29 停止交易。马刺 vs 独行侠在 0:30 开打。</li>
+<li><strong>11/5：</strong> 欧联 Ferencváros 不赢（$9.93），15:45 开赛。</li>
+<li><strong>Toledo（$9.96）：</strong> 比赛时间是 11/3 22:00，已经过去了，但市场还没结算。最晚 11/5 19:00 前会关闭。</li>
+<li><strong>2027 年 1 月 4 日左右：</strong> 三个选举市场（Alaska 和 Mississippi 参议院、FL-26 众议院），成本 $787.84，占总成本 70%，现在市值 $985.88。规则是新议员宣誓就职后才提前关闭，所以这部分钱大概会被锁两个月。如果想早点拿回资金，只能按市价卖掉。</li>
+<li><strong>Maine 胜幅市场（$4.88）：</strong> 选举已经结束，报价 0.997，基本确定能赢，在等官方结算。</li>
+</ul>
+<p><strong>集中度风险。</strong> 最大的一笔是 Mississippi 民主党：成本占 34.5%，按市值占 44.4%，而且整个账户的浮盈几乎都来自它（+$202.50）。另外，今天卖亏 -$236.80 的也是同一场 Mississippi 选举（共和党那边），所以这一场选举决定了你目前大部分盈亏。三个选举市场合计占总成本 70%。体育类仓位单笔大多在 $10 左右，只有 AEK、Gen.G、马刺三笔比较大。</p>
+<p><strong>还要注意：</strong> St. Joseph's 那两笔（YES St. Joseph's 赢 + NO Longwood 赢）押的是同一个结果，<strong>不是对冲</strong>，等于在这场比赛上下了双倍注，合计 $19.78。</p>
+<p><strong>确定程度：</strong></p>
+<ul>
+<li><strong>基本确定（≥95%）：</strong> Maine 胜幅（99.8%）、AEK 不赢（96.5%）、FL-26 共和党（95.4%）。Toledo（94.5%）也很接近。</li>
+<li><strong>比较稳（90%–95%）：</strong> Mississippi 民主党（92.8%）、Alaska 民主党（92.2%）、Gen.G（91.5%）。这里要提醒一下，选举市场的价格在 92%–93%，说明市场仍给对方留了约 7%–8% 的机会。押中 Alaska 只多赚 $13.46，押错会亏 $199，风险和回报不对等。</li>
+<li><strong>有不确定性（&lt;90%）：</strong> Balkan 不赢（70.5%，最不确定）、Wrexham 不赢（78.5%）、巴西央行维持利率（80%）、St. Joseph's 两笔（约 84%）、马刺（83.5%）、Sport Boys 不赢（87.5%）、Ferencváros 不赢（89.5%）。这些市场今晚到明天陆续揭晓，合计成本约 $128。</li>
+</ul>
+</div>
+
+<p class="source-note">图表文件：<code>charts/deposits.png</code>、<code>charts/pnl_curve.png</code>、<code>charts/positions.png</code>；每日盈亏 <code>charts/pnl_daily.csv</code>；原始分析数据 <code>data/analysis.json</code>；生成脚本 <code>analysis.py</code>。</p>
 
 <h2>一、当日成交（16 笔）</h2>
 <div class="section">
