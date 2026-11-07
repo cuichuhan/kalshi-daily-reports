@@ -1,0 +1,7 @@
+sampled_at_et,cash_available,portfolio_value,total_assets,net_external_deposits_reference,resting_orders,frozen_cash,complete_equity_verified,scope,precision,source,source_sha256
+2026-11-04T20:04:00-05:00,459.18,1812.09,2271.27,2000.0,,,False,主账户0，全部交易分区；不合并子账户；内部划转不计外部入金,历史报告美元小数2位；时间精确到分钟,/workspace/kalshi/publish/2026-11-04/2026-11-04.md,7c856e264e0bb00e2cbc953d73214b5e23f7cb727e643211f6a95ff32802f8da
+2026-11-05T00:34:00-05:00,126.42,2542.34,2668.76,2000.0,,,False,主账户0，全部交易分区；不合并子账户；内部划转不计外部入金,历史报告美元小数2位；时间精确到分钟,/workspace/kalshi/reports/2026-11-04.md,a0b5b6e91396c3736e29b6ac82c26f7e90aac0aae0d6de556c46c46928bd3a16
+2026-11-05T19:57:00-05:00,145.11,2551.83,2696.94,2500.0,,,False,主账户0，全部交易分区；不合并子账户；内部划转不计外部入金,历史报告美元小数2位；时间精确到分钟,/workspace/kalshi/reports/2026-11-05.md,c1cd808a8154e80934c1308dd34ecd24c26ffe2a154d12b53791773511c8105c
+2026-11-06T19:57:00-05:00,0.5,2101.17,2101.67,2000.0,,,False,主账户0，全部交易分区；不合并子账户；内部划转不计外部入金,历史报告美元小数2位；时间精确到分钟,/workspace/kalshi/reports/2026-11-06.md,e71c84479d550aadf55208c454031ffbcaff2e7dc7c67f7d40799d17f1c64b1f
+2026-11-07T18:00:19-05:00,0.5818,2533.97,2534.5518,3000.0,0,0,True,主账户0，全部交易分区；不合并子账户；内部划转不计外部入金,实时API精度,/workspace/kalshi/data/asset_snapshots/20261107T180019316539.json,f9e165c71adb89a3b2e0cfbe4c63841af7417cc9b4576f93d87487cffd971de5
+2026-11-07T18:00:23-05:00,0.5818,2533.97,2534.5518,3000.0,0,0,True,主账户0，全部交易分区；不合并子账户；内部划转不计外部入金,实时API精度,/workspace/kalshi/data/asset_snapshots/20261107T180023683629.json,e5cf97a4c592d0d7ffa0c4c465b75660fe29dc17b084ae116520b2f1a5177b28
