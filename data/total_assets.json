@@ -93,6 +93,54 @@
       "source": "/workspace/kalshi/data/asset_snapshots/20261107T180023683629.json",
       "source_sha256": "e5cf97a4c592d0d7ffa0c4c465b75660fe29dc17b084ae116520b2f1a5177b28",
       "net_external_deposits_reference": 3000.0
+    },
+    {
+      "sampled_at_et": "2026-11-07T19:57:35-05:00",
+      "cash_available": 162.6123,
+      "portfolio_value": 2429.66,
+      "total_assets": 2592.2723,
+      "scope": "主账户0，全部交易分区；不合并子账户；内部划转不计外部入金",
+      "precision": "实时API精度",
+      "resting_orders": 0,
+      "frozen_cash": 0,
+      "complete_equity_verified": true,
+      "other_subaccounts": [],
+      "evidence": "只读API余额；无挂单时冻结为0；有挂单时不推算冻结，不称完整资产",
+      "source": "/workspace/kalshi/data/asset_snapshots/20261107T195735958080.json",
+      "source_sha256": "c2fdc5fc65d98aad62bc872f76d0efec7984789d48a8640ad66458df498745d8",
+      "net_external_deposits_reference": 3000.0
+    },
+    {
+      "sampled_at_et": "2026-11-07T19:57:43-05:00",
+      "cash_available": 162.6123,
+      "portfolio_value": 2429.66,
+      "total_assets": 2592.2723,
+      "scope": "主账户0，全部交易分区；不合并子账户；内部划转不计外部入金",
+      "precision": "实时API精度",
+      "resting_orders": 0,
+      "frozen_cash": 0,
+      "complete_equity_verified": true,
+      "other_subaccounts": [],
+      "evidence": "只读API余额；无挂单时冻结为0；有挂单时不推算冻结，不称完整资产",
+      "source": "/workspace/kalshi/data/asset_snapshots/20261107T195743691104.json",
+      "source_sha256": "0f43788078fc56eb4d7d1df4bc90e7022160d2fbcfd3a5aa2de80381f5b31455",
+      "net_external_deposits_reference": 3000.0
+    },
+    {
+      "sampled_at_et": "2026-11-11T14:16:20-05:00",
+      "cash_available": 1304.2165,
+      "portfolio_value": 5493.26,
+      "total_assets": 6797.4765,
+      "scope": "主账户0，全部交易分区；不合并子账户；内部划转不计外部入金",
+      "precision": "实时API精度",
+      "resting_orders": 0,
+      "frozen_cash": 0,
+      "complete_equity_verified": true,
+      "other_subaccounts": [],
+      "evidence": "只读API余额；无挂单时冻结为0；有挂单时不推算冻结，不称完整资产",
+      "source": "/workspace/kalshi/data/asset_snapshots/20261111T141620338749.json",
+      "source_sha256": "cc6b46c1de20766468b936431cd39c0174e0b3cfb9ec04aedd98f6a4e23234be",
+      "net_external_deposits_reference": 5500.0
     }
   ],
   "external_flows": [
@@ -105,25 +153,25 @@
     {
       "at_et": "2026-11-03T20:28:12-05:00",
       "amount": 500.0,
-      "timing": "创建时间近似",
+      "timing": "完成时间",
       "kind": "外部入金"
     },
     {
       "at_et": "2026-11-03T21:17:15-05:00",
       "amount": 1000.0,
-      "timing": "创建时间近似",
+      "timing": "完成时间",
       "kind": "外部入金"
     },
     {
       "at_et": "2026-11-03T21:25:49-05:00",
       "amount": 450.0,
-      "timing": "创建时间近似",
+      "timing": "完成时间",
       "kind": "外部入金"
     },
     {
       "at_et": "2026-11-04T23:10:20-05:00",
       "amount": 2000.0,
-      "timing": "创建时间近似",
+      "timing": "完成时间",
       "kind": "外部入金"
     },
     {
@@ -147,6 +195,30 @@
     {
       "at_et": "2026-11-07T17:37:04-05:00",
       "amount": 1000.0,
+      "timing": "创建时间近似",
+      "kind": "外部入金"
+    },
+    {
+      "at_et": "2026-11-07T20:23:05-05:00",
+      "amount": -1000.0,
+      "timing": "完成时间",
+      "kind": "外部出金"
+    },
+    {
+      "at_et": "2026-11-08T13:50:35-05:00",
+      "amount": 1000.0,
+      "timing": "创建时间近似",
+      "kind": "外部入金"
+    },
+    {
+      "at_et": "2026-11-08T13:51:00-05:00",
+      "amount": 500.0,
+      "timing": "创建时间近似",
+      "kind": "外部入金"
+    },
+    {
+      "at_et": "2026-11-09T18:01:08-05:00",
+      "amount": 2000.0,
       "timing": "创建时间近似",
       "kind": "外部入金"
     }
