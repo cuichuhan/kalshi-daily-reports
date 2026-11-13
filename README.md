@@ -2,17 +2,13 @@
 
 按交易日归档的 Kalshi 成交、已实现盈亏与持仓报告。
 
-## Kalshi 资金、盈亏与持仓分析（2026-11-11）
+## Kalshi 资金、盈亏与持仓分析（2026-11-12）
 
-_数据生成时间：2026-11-11 20:00（美东），全部来自 Kalshi 只读 API。持仓价格是生成那一刻的报价，之后会变。_
+_数据生成时间：2026-11-12 19:53（美东），全部来自 Kalshi 只读 API。持仓价格是生成那一刻的报价，之后会变。_
 
-**当日已实现净盈亏合计：-$1,112.21**（盈利 18 个市场，亏损 2 个市场；均已扣手续费）。结算盈亏 -$1,112.21（21 个市场），卖出平仓盈亏 $0.00（0 个市场），累计 +$1,177.40。
+## 一、入金记录
 
-合计：买入 $26,537.11，卖出 $7,749.72，手续费 $223.63。现金余额 **$1,145.91**。Kalshi 显示的持仓市值（portfolio_value）：$8,780.03。持仓市场数：28。持仓总成本 $8,455.29，按当前买价估算市值 $8,765.47，浮动盈亏 +$310.19（估算，未扣卖出手续费）。分析采样官方持仓市值 $8,784.63，官方总资产（可用现金 $1,145.9117 ＋ 官方持仓市值 $8,784.63）为 **$9,930.5417**。历史只连接真实采样；历史冻结资金和子账户未核验，入金不是收益。
-
-### 一、入金记录
-
-![入金记录](charts/deposits-2026-11-11.png)
+![入金记录](charts/deposits-2026-11-12.png)
 
 | 时间（美东） | 类型 | 方式 | 金额 | 手续费 | 状态 |
 |---|---|---|---:|---:|---|
@@ -33,9 +29,9 @@ _数据生成时间：2026-11-11 20:00（美东），全部来自 Kalshi 只读 
 
 **合计入金 $12,000.00，出金 $3,500.00。**
 
-### 二、已实现盈亏曲线
+## 二、已实现盈亏曲线
 
-![盈亏曲线](charts/pnl_curve-2026-11-11.png)
+![盈亏曲线](charts/pnl_curve-2026-11-12.png)
 
 | 日期（美东） | 结算盈亏 | 卖出平仓盈亏 | 当日已实现 | 累计 | 成交笔数 | 当日手续费 |
 |---|---:|---:|---:|---:|---:|---:|
@@ -47,17 +43,18 @@ _数据生成时间：2026-11-11 20:00（美东），全部来自 Kalshi 只读 
 | 2026-11-08 | +$119.08（22 个市场） | $0.00（0 个市场） | **+$119.08** | -$82.96 | 61 | $72.93 |
 | 2026-11-09 | +$483.39（13 个市场） | -$645.64（4 个市场） | **-$162.25** | -$245.21 | 125 | $186.45 |
 | 2026-11-10 | +$2,534.82（32 个市场） | $0.00（0 个市场） | **+$2,534.82** | +$2,289.61 | 238 | $394.43 |
-| 2026-11-11 | -$1,112.21（21 个市场） | $0.00（0 个市场） | **-$1,112.21** | +$1,177.40 | 276 | $223.63 |
+| 2026-11-11 | -$2,371.65（50 个市场） | -$1,632.59（3 个市场） | **-$4,004.23** | -$1,714.62 | 457 | $410.22 |
+| 2026-11-12 | +$2,160.60（31 个市场） | -$148.13（1 个市场） | **+$2,012.48** | +$297.86 | 284 | $142.38 |
 
 口径：都已扣手续费。结算盈亏 = 结算赔付（含 YES/NO 配对兑付）− 该市场累计买入成本 − 累计手续费；卖出平仓用平均成本法。
 
-**对账**：现金 $1,145.91 + 持仓按买价估算市值 $8,770.05 = $9,915.96，减去净入金 $8,500.00，买价估值口径差额 **+$1,415.96**（不是下图官方总资产口径）。盈亏模型对照（可能因采样时差、成本口径而不同，非强制相等）：累计已实现 +$1,177.40 + 浮动 +$314.77 − 持仓已付手续费 $76.20 = +$1,415.96。
+**对账**：现金 $5.83 + 持仓按买价估算市值 $8,592.96 = $8,598.79，减去净入金 $8,500.00，买价估值口径差额 **+$98.79**（不是下图官方总资产口径）。盈亏模型对照（可能因采样时差、成本口径而不同，非强制相等）：累计已实现 +$297.86 + 浮动 -$142.58 − 持仓已付手续费 $56.49 = +$98.79。
 
-### 总资产曲线（真实资产快照）
+## 总资产曲线（真实资产快照）
 
-![总资产曲线](charts/total_assets-2026-11-11.png)
+![总资产曲线](charts/total_assets-2026-11-12.png)
 
-采样时间：2026-11-11T20:00:09-05:00（ET）。主账户可用现金 **$1,145.9117** ＋ 官方持仓市值 **$8,784.63** ＝ **$9,930.5417**。
+采样时间：2026-11-12T19:53:32-05:00（ET）。主账户可用现金 **$5.8294** ＋ 官方持仓市值 **$8,665.61** ＝ **$8,671.4394**。
 
 当前未成交挂单 0 笔；冻结资金为0。
 
@@ -67,68 +64,85 @@ _数据生成时间：2026-11-11 20:00（美东），全部来自 Kalshi 只读 
 
 审计数据：[data/total_assets.csv](data/total_assets.csv)、[data/total_assets.json](data/total_assets.json)；原始快照在 `data/asset_snapshots/`（原始快照文件未放入本仓库，路径和 sha256 记在 JSON 里）。
 
-**官方口径复核**：可用现金 $1,145.9117 ＋ 官方持仓市值 $8,784.63 ＝ 总资产 $9,930.5417。官方市值比逐仓买价估值高 $14.5772；因此两种资产口径不能混用。
+**官方口径复核**：可用现金 $5.8294 ＋ 官方持仓市值 $8,665.61 ＝ 总资产 $8,671.4394。官方市值比逐仓买价估值高 $72.6535；因此两种资产口径不能混用。
 
-总资产减外部净入金 = +$1,430.54；盈亏模型加估值差额 = +$1,430.54，对账残差 $0.000000。仅在无子账户内部资金影响且现金覆盖完整时，此差额才可解释为整体盈亏。
+总资产减外部净入金 = +$171.44；盈亏模型加估值差额 = +$171.44，对账残差 $0.000000。仅在无子账户内部资金影响且现金覆盖完整时，此差额才可解释为整体盈亏。
 
-### 三、当前持仓与到期时间
+## 三、当前持仓与到期时间
 
-![持仓](charts/positions-2026-11-11.png)
+![持仓](charts/positions-2026-11-12.png)
 
 | 预计到期（美东） | 市场 | 押注 | 份数 | 成本 | 均价 | 买价/卖价 | 估算市值 | 浮动盈亏 | 赢了净赚* | 隐含胜率 |
 |---|---|---|---:|---:|---:|---|---:|---:|---:|---:|
-| 2026-11-11 18:00 | Sacramento St. wins<br>`KXNCAAFGAME-26NOV11SACCMU-SAC` | NO（Sacramento St. 不成立） | 418.12 | $372.13 | $0.890 | 0.94/0.95 | $393.03 | +$20.91 | +$43.13 | 94.5% |
-| 2026-11-11 18:00 | UMass wins<br>`KXNCAAFGAME-26NOV11MASSTOL-MASS` | NO（UMass 不成立） | 458.00 | $384.72 | $0.840 | 0.81/0.82 | $370.98 | -$13.74 | +$68.97 | 81.5% |
-| 2026-11-11 21:00 | North Carolina Central wins<br>`KXNCAAMBGAME-26NOV11NCCUVMI-NCCU` | NO（North Carolina Central 不成立） | 1,410.00 | $1,085.70 | $0.770 | 0.99/1.0 | $1,395.90 | +$310.20 | +$306.82 | 99.5% |
-| 2026-11-11 21:00 | UMass Lowell wins<br>`KXNCAAWBGAME-26NOV11MASSLBC-MASSL` | NO（UMass Lowell 不成立） | 192.00 | $174.72 | $0.910 | 0.99/1.0 | $190.08 | +$15.36 | +$16.18 | 99.5% |
-| 2026-11-11 21:00 | Siena wins<br>`KXNCAAWBGAME-26NOV11SIESYR-SIE` | NO（Siena 不成立） | 247.00 | $244.53 | $0.990 | 0.99/1.0 | $244.53 | $0.00 | +$2.30 | 99.5% |
-| 2026-11-11 21:30 | Southern Indiana wins<br>`KXNCAAMBGAME-26NOV11USIIUIN-USI` | NO（Southern Indiana 不成立） | 493.00 | $379.61 | $0.770 | 0.65/0.66 | $320.45 | -$59.16 | +$107.28 | 65.5% |
-| 2026-11-11 22:00 | South Dakota wins<br>`KXNCAAWBGAME-26NOV11CREISDAK-SDAK` | NO（South Dakota 不成立） | 216.00 | $185.76 | $0.860 | 0.74/0.81 | $159.84 | -$25.92 | +$28.42 | 77.5% |
-| 2026-11-11 22:00 | Cornell wins<br>`KXNCAAMBGAME-26NOV11CORSBON-COR` | NO（Cornell 不成立） | 487.00 | $379.71 | $0.780 | 0.97/0.98 | $472.39 | +$92.68 | +$101.43 | 97.5% |
-| 2026-11-11 22:00 | South Carolina wins<br>`KXNCAAMBGAME-26NOV11SPCSCAR-SCAR` | YES（South Carolina） | 69.00 | $67.62 | $0.980 | 0.99/1.0 | $68.31 | +$0.69 | +$1.29 | 99.5% |
-| 2026-11-11 22:00 | Saint Peter's wins<br>`KXNCAAMBGAME-26NOV11SPCSCAR-SPC` | NO（Saint Peter's 不成立） | 191.00 | $187.18 | $0.980 | 0.99/1.0 | $189.09 | +$1.91 | +$3.56 | 99.5% |
-| 2026-11-11 22:00 | Furman wins<br>`KXNCAAMBGAME-26NOV11FURHC-FUR` | YES（Furman） | 436.00 | $381.43 | $0.875 | 0.96/0.97 | $418.56 | +$37.13 | +$51.23 | 96.5% |
-| 2026-11-11 22:00 | UMass Lowell wins<br>`KXNCAAMBGAME-26NOV11MASSLMASS-MASSL` | NO（UMass Lowell 不成立） | 487.00 | $379.86 | $0.780 | 0.48/0.49 | $233.76 | -$146.10 | +$101.29 | 48.5% |
-| 2026-11-11 22:00 | St. John's wins<br>`KXNCAAMBGAME-26NOV11COLGSJU-SJU` | YES（St. John's） | 259.00 | $256.41 | $0.990 | 0.99/1.0 | $256.41 | $0.00 | +$2.41 | 99.5% |
-| 2026-11-11 22:00 | South Carolina St. wins<br>`KXNCAAMBGAME-26NOV11SCSTND-SCST` | NO（South Carolina St. 不成立） | 260.00 | $255.49 | $0.983 | 0.99/1.0 | $257.40 | +$1.91 | +$4.20 | 99.5% |
-| 2026-11-11 22:00 | UNC Wilmington wins<br>`KXNCAAMBGAME-26NOV11KENTUNCW-UNCW` | YES（UNC Wilmington） | 484.00 | $367.84 | $0.760 | 0.98/0.99 | $474.32 | +$106.48 | +$109.98 | 98.5% |
-| 2026-11-11 22:30 | Troy wins<br>`KXNCAAWBGAME-26NOV11TROYMSST-TROY` | NO（Troy 不成立） | 144.00 | $132.48 | $0.920 | 0.99/1.0 | $142.56 | +$10.08 | +$10.78 | 99.5% |
-| 2026-11-11 22:30 | Wisconsin wins<br>`KXNCAAWBGAME-26NOV11DELWIS-WIS` | YES（Wisconsin） | 135.00 | $133.65 | $0.990 | 0.99/1.0 | $133.65 | $0.00 | +$1.26 | 99.5% |
-| 2026-11-11 23:00 | Chicago St. wins<br>`KXNCAAWBGAME-26NOV11CHSUIC-CHS` | NO（Chicago St. 不成立） | 57.00 | $55.86 | $0.980 | 0.94/0.96 | $53.58 | -$2.28 | +$1.06 | 95.0% |
-| 2026-11-11 23:00 | Southern Miss wins<br>`KXNCAAMBGAME-26NOV11JKSTUSM-USM` | YES（Southern Miss） | 167.00 | $131.93 | $0.790 | 0.76/0.77 | $126.92 | -$5.01 | +$33.13 | 76.5% |
-| 2026-11-11 23:00 | Oral Roberts wins<br>`KXNCAAMBGAME-26NOV11ORUTLSA-ORU` | NO（Oral Roberts 不成立） | 408.00 | $387.60 | $0.950 | 0.94/0.95 | $383.52 | -$4.08 | +$19.04 | 94.5% |
-| 2026-11-11 23:00 | San Antonio wins<br>`KXNBAGAME-26NOV11SASCHI-SAS` | YES（San Antonio） | 425.00 | $386.75 | $0.910 | 0.9/0.91 | $382.50 | -$4.25 | +$35.81 | 90.5% |
-| 2026-11-11 23:00 | Los Angeles L wins<br>`KXNBAGAME-26NOV11LALMIL-LAL` | YES（Los Angeles L） | 435.00 | $385.74 | $0.887 | 0.88/0.89 | $382.80 | -$2.94 | +$46.20 | 88.5% |
-| 2026-11-12 00:00 | Oakland wins<br>`KXNCAAMBGAME-26NOV11OAKBSU-OAK` | NO（Oakland 不成立） | 343.00 | $318.99 | $0.930 | 0.92/0.93 | $315.56 | -$3.43 | +$22.45 | 92.5% |
-| 2026-11-12 00:00 | Portland St. wins<br>`KXNCAAMBGAME-26NOV11PRSTCSU-PRST` | NO（Portland St. 不成立） | 343.00 | $318.99 | $0.930 | 0.92/0.93 | $315.56 | -$3.43 | +$22.45 | 92.5% |
-| 2026-11-12 00:00 | Cal Poly wins<br>`KXNCAAMBGAME-26NOV11CPGC-CP` | NO（Cal Poly 不成立） | 337.00 | $320.15 | $0.950 | 0.94/0.95 | $316.78 | -$3.37 | +$15.73 | 94.5% |
-| 2026-11-12 01:00 | Chicago St. wins<br>`KXNCAAMBGAME-26NOV11CHSCBU-CHS` | NO（Chicago St. 不成立） | 362.00 | $318.56 | $0.880 | 0.87/0.88 | $314.94 | -$3.62 | +$40.76 | 87.5% |
-| 2026-11-12 01:00 | UTSA wins<br>`KXNCAAMBGAME-26NOV11UTSASEA-UTSA` | NO（UTSA 不成立） | 339.00 | $318.66 | $0.940 | 0.93/0.94 | $315.27 | -$3.39 | +$19.00 | 93.5% |
-| 2026-11-12 02:00 | USC wins<br>`KXNCAAMBGAME-26NOV11USCCAL-USC` | YES（USC） | 186.00 | $143.22 | $0.770 | 0.76/0.77 | $141.36 | -$1.86 | +$40.47 | 76.5% |
-| **合计（28 个市场）** | | | | **$8,455.29** | | | **$8,770.05** | **+$314.77** | **+$1,256.63** | |
+| 2026-11-12 20:00 | Pasto wins<br>`KXDIMAYORGAME-26NOV12PASJUN-PAS` | NO（Pasto 不成立） | 560.84 | $527.19 | $0.940 | 0.99/1.0 | $555.23 | +$28.04 | +$31.44 | 99.5% |
+| 2026-11-12 21:00 | Richmond wins<br>`KXNCAAWBGAME-26NOV12ODURICH-RICH` | YES（Richmond） | 439.25 | $358.74 | $0.817 | 0.99/1.0 | $434.86 | +$76.12 | +$75.91 | 99.5% |
+| 2026-11-12 21:00 | VCU wins<br>`KXNCAAWBGAME-26NOV12VTVCU-VCU` | NO（VCU 不成立） | 462.00 | $437.85 | $0.948 | 0.99/1.0 | $457.38 | +$19.53 | +$22.55 | 99.5% |
+| 2026-11-12 21:00 | Tulsa wins<br>`KXNCAAWBGAME-26NOV12OKSTTLSA-TLSA` | NO（Tulsa 不成立） | 80.00 | $79.20 | $0.990 | 0.74/0.8 | $59.20 | -$20.00 | +$0.74 | 77.0% |
+| 2026-11-12 21:00 | Oklahoma St. wins<br>`KXNCAAWBGAME-26NOV12OKSTTLSA-OKST` | YES（Oklahoma St.） | 440.00 | $435.60 | $0.990 | 0.72/0.77 | $316.80 | -$118.80 | +$4.09 | 74.5% |
+| 2026-11-12 21:00 | Coppin St. wins<br>`KXNCAAMBGAME-26NOV12COPPBRAD-COPP` | NO（Coppin St. 不成立） | 600.00 | $523.78 | $0.873 | 0.81/0.82 | $486.00 | -$37.78 | +$71.56 | 81.5% |
+| 2026-11-12 21:00 | Antigua & Barbuda wins<br>`KXCONCACAFNLGAME-26NOV12ANTTTO-ANT` | NO（Antigua & Barbuda 不成立） | 575.00 | $511.75 | $0.890 | 0.99/1.0 | $569.25 | +$57.50 | +$59.31 | 99.5% |
+| 2026-11-12 21:30 | Penn St. wins<br>`KXNCAAMBGAME-26NOV12MHUPSU-PSU` | YES（Penn St.） | 2.00 | $1.94 | $0.970 | 0.95/0.96 | $1.90 | -$0.04 | +$0.06 | 95.5% |
+| 2026-11-12 21:30 | Mercyhurst wins<br>`KXNCAAMBGAME-26NOV12MHUPSU-MHU` | NO（Mercyhurst 不成立） | 264.00 | $256.08 | $0.970 | 0.95/0.96 | $250.80 | -$5.28 | +$7.38 | 95.5% |
+| 2026-11-12 21:30 | UConn wins<br>`KXNCAAWBGAME-26NOV12CONNOSU-CONN` | YES（UConn） | 322.00 | $255.07 | $0.792 | 0.96/0.97 | $309.12 | +$54.05 | +$63.22 | 96.5% |
+| 2026-11-12 21:30 | Indiana wins<br>`KXNCAAMBGAME-26NOV12TNTCIND-IND` | YES（Indiana） | 67.00 | $66.33 | $0.990 | 0.97/0.98 | $64.99 | -$1.34 | +$0.62 | 97.5% |
+| 2026-11-12 21:30 | Tennessee Tech wins<br>`KXNCAAMBGAME-26NOV12TNTCIND-TNTC` | NO（Tennessee Tech 不成立） | 195.00 | $192.22 | $0.986 | 0.96/0.97 | $187.20 | -$5.02 | +$2.59 | 96.5% |
+| 2026-11-12 21:30 | Middle Tennessee wins<br>`KXNCAAWBGAME-26NOV12MTUTENN-MTU` | NO（Middle Tennessee 不成立） | 259.00 | $256.41 | $0.990 | 0.99/1.0 | $256.41 | $0.00 | +$2.41 | 99.5% |
+| 2026-11-12 22:00 | Maryland-Eastern Shore wins<br>`KXNCAAWBGAME-26NOV12UMESGT-UMES` | NO（Maryland-Eastern Shore 不成立） | 2.00 | $1.98 | $0.990 | 0.99/1.0 | $1.98 | $0.00 | +$0.02 | 99.5% |
+| 2026-11-12 22:00 | Rider wins<br>`KXNCAAWBGAME-26NOV12RIDCCSU-RID` | YES（Rider） | 313.00 | $255.83 | $0.817 | 0.98/0.99 | $306.74 | +$50.91 | +$53.90 | 98.5% |
+| 2026-11-12 22:00 | Milwaukee wins<br>`KXNCAAWBGAME-26NOV12UNDMILW-MILW` | YES（Milwaukee） | 326.00 | $255.29 | $0.783 | 0.99/1.0 | $322.74 | +$67.45 | +$66.83 | 99.5% |
+| 2026-11-12 22:00 | Loyola Maryland wins<br>`KXNCAAMBGAME-26NOV12LMDTOWS-LMD` | NO（Loyola Maryland 不成立） | 284.00 | $258.44 | $0.910 | 0.99/1.0 | $281.16 | +$22.72 | +$23.93 | 99.5% |
+| 2026-11-12 22:00 | Howard wins<br>`KXNCAAMBGAME-26NOV12STETHOW-HOW` | YES（Howard） | 312.00 | $255.82 | $0.820 | 0.76/0.8 | $237.12 | -$18.70 | +$52.96 | 78.0% |
+| 2026-11-12 22:00 | Bowling Green wins<br>`KXNCAAMBGAME-26NOV12NIAGBGSU-BGSU` | YES（Bowling Green） | 280.00 | $257.60 | $0.920 | 0.98/0.99 | $274.40 | +$16.80 | +$20.96 | 98.5% |
+| 2026-11-12 22:00 | Western Illinois wins<br>`KXNCAAMBGAME-26NOV12CSBWIU-WIU` | NO（Western Illinois 不成立） | 319.00 | $255.20 | $0.800 | 0.46/0.5 | $146.74 | -$108.46 | +$60.23 | 48.0% |
+| 2026-11-12 22:00 | Columbia wins<br>`KXNCAAWBGAME-26NOV12MICHCLMB-CLMB` | NO（Columbia 不成立） | 269.00 | $258.24 | $0.960 | 0.97/0.99 | $260.93 | +$2.69 | +$10.04 | 98.0% |
+| 2026-11-12 22:00 | Canisius wins<br>`KXNCAAMBGAME-26NOV12CANBRWN-CAN` | NO（Canisius 不成立） | 289.00 | $257.21 | $0.890 | 0.34/0.35 | $98.26 | -$158.95 | +$29.81 | 34.5% |
+| 2026-11-12 22:00 | Rhode Island wins<br>`KXNCAAMBGAME-26NOV12UMESURI-URI` | YES（Rhode Island） | 265.00 | $258.88 | $0.977 | 0.95/0.96 | $251.75 | -$7.13 | +$5.70 | 95.5% |
+| 2026-11-12 22:00 | Clemson wins<br>`KXNCAAWBGAME-26NOV12SCARCLEM-CLEM` | NO（Clemson 不成立） | 261.00 | $258.39 | $0.990 | 0.98/0.99 | $255.78 | -$2.61 | +$2.43 | 98.5% |
+| 2026-11-12 22:00 | Mercer wins<br>`KXNCAAMBGAME-26NOV12MERWVU-MER` | NO（Mercer 不成立） | 261.00 | $258.37 | $0.990 | 0.94/0.95 | $245.34 | -$13.03 | +$2.45 | 94.5% |
+| 2026-11-12 22:00 | Southern Utah wins<br>`KXNCAAMBGAME-26NOV12SUUHP-SUU` | NO（Southern Utah 不成立） | 266.00 | $258.02 | $0.970 | 0.94/0.95 | $250.04 | -$7.98 | +$7.44 | 94.5% |
+| 2026-11-12 22:00 | Detroit wins<br>`KXNBAGAME-26NOV12DETWAS-DET` | YES（Detroit） | 82.00 | $65.60 | $0.800 | 0.78/0.79 | $63.96 | -$1.64 | +$15.48 | 78.5% |
+| 2026-11-12 22:00 | Washington wins<br>`KXNBAGAME-26NOV12DETWAS-WAS` | NO（Washington 不成立） | 237.00 | $189.60 | $0.800 | 0.78/0.79 | $184.86 | -$4.74 | +$44.75 | 78.5% |
+| 2026-11-12 22:30 | New Orleans wins<br>`KXNCAAWBGAME-26NOV12UNOTULN-UNO` | NO（New Orleans 不成立） | 52.00 | $51.48 | $0.990 | 0.99/1.0 | $51.48 | $0.00 | +$0.48 | 99.5% |
+| 2026-11-12 22:30 | Curacao wins<br>`KXCONCACAFNLGAME-26NOV12CUWPAN-CUW` | NO（Curacao 不成立） | 168.00 | $130.38 | $0.776 | 0.69/0.7 | $115.92 | -$14.46 | +$35.58 | 69.5% |
+| 2026-11-12 22:30 | Tennessee-Martin wins<br>`KXNCAAWBGAME-26NOV12UTMMIZZ-UTM` | NO（Tennessee-Martin 不成立） | 84.00 | $80.64 | $0.960 | 0.98/1.0 | $82.32 | +$1.68 | +$3.13 | 99.0% |
+| 2026-11-12 23:00 | Ball St. wins<br>`KXNCAAWBGAME-26NOV12LOUBALL-BALL` | NO（Ball St. 不成立） | 246.00 | $243.54 | $0.990 | 0.97/0.99 | $238.62 | -$4.92 | +$2.29 | 98.0% |
+| 2026-11-12 23:00 | Southern University wins<br>`KXNCAAMBGAME-26NOV12SOUMINN-SOU` | NO（Southern University 不成立） | 246.00 | $243.54 | $0.990 | 0.98/0.99 | $241.08 | -$2.46 | +$2.29 | 98.5% |
+| 2026-11-12 23:00 | Oklahoma St. wins<br>`KXNCAAMBGAME-26NOV12OKSTTXAM-OKST` | NO（Oklahoma St. 不成立） | 312.00 | $240.24 | $0.770 | 0.76/0.77 | $237.12 | -$3.12 | +$67.89 | 76.5% |
+| 2026-11-12 23:30 | Northern Iowa wins<br>`KXNCAAWBGAME-26NOV12UNIIOWA-UNI` | NO（Northern Iowa 不成立） | 134.00 | $132.66 | $0.990 | 0.98/0.99 | $131.32 | -$1.34 | +$1.25 | 98.5% |
+| 2026-11-13 00:00 | Louisiana wins<br>`KXNCAAFGAME-26NOV12ULLULM-ULL` | YES（Louisiana） | 167.33 | $130.52 | $0.780 | 0.78/0.79 | $130.52 | $0.00 | +$34.80 | 78.5% |
+| 2026-11-13 00:00 | BYU wins<br>`KXNCAAMBGAME-26NOV12MTSTBYU-BYU` | YES（BYU） | 137.00 | $132.07 | $0.964 | 0.96/0.97 | $131.52 | -$0.55 | +$4.60 | 96.5% |
+| 2026-11-13 01:00 | UC Riverside wins<br>`KXNCAAMBGAME-26NOV12UCRVSJSU-UCRV` | NO（UC Riverside 不成立） | 68.00 | $52.36 | $0.770 | 0.76/0.77 | $51.68 | -$0.68 | +$14.80 | 76.5% |
+| 2026-11-13 01:30 | Arizona wins<br>`KXNCAAWBGAME-26NOV12ARIZUCLA-ARIZ` | NO（Arizona 不成立） | 52.00 | $51.48 | $0.990 | 0.97/0.99 | $50.44 | -$1.04 | +$0.48 | 98.0% |
+| **合计（39 个市场）** | | | | **$8,735.54** | | | **$8,592.96** | **-$142.58** | **+$906.39** | |
 
 \*赢了净赚 = 赔付 − 成本 − 该仓位已付手续费。隐含胜率取你这一边买价和卖价的中间值。预计到期取 Kalshi 的 `expected_expiration_time`。
 
-#### 分析
+### 分析
 
-**总敞口。** 持仓总成本 $8,455.29，按当前买价估算市值 $8,770.05，浮动 +$314.77（未扣卖出手续费）。全部押中可再净赚 +$1,256.63；最坏情况全部押错，亏掉 $8,455.29。账上现金 $1,145.91。
+**总敞口。** 持仓总成本 $8,735.54，按当前买价估算市值 $8,592.96，浮动 -$142.58（未扣卖出手续费）。全部押中可再净赚 +$906.39；最坏情况全部押错，亏掉 $8,735.54。账上现金 $5.83。
 
 **什么时候到期：**
-- **今天：** 22 个市场，成本 $6,716.72（占 79.4%）；最大一笔是 North Carolina Central wins NO（North Carolina Central 不成立），成本 $1,085.70，预计 2026-11-11 21:00 到期。
-- **2026-11-12：** 6 个市场，成本 $1,738.57（占 20.6%）；最大一笔是 Cal Poly wins NO（Cal Poly 不成立），成本 $320.15，预计 2026-11-12 00:00 到期。
+- **今天：** 35 个市场，成本 $8,369.11（占 95.8%）；最大一笔是 Pasto wins NO（Pasto 不成立），成本 $527.19，预计 2026-11-12 20:00 到期。
+- **2026-11-13：** 4 个市场，成本 $366.43（占 4.2%）；最大一笔是 BYU wins YES（BYU），成本 $132.07，预计 2026-11-13 00:00 到期。
 
-**集中度。** 成本最大的三笔：North Carolina Central wins NO（North Carolina Central 不成立） $1,085.70（12.8%）；Oral Roberts wins NO（Oral Roberts 不成立） $387.60（4.6%）；San Antonio wins YES（San Antonio） $386.75（4.6%）。
-浮盈最大的是 North Carolina Central wins（+$310.20）。
+**集中度。** 成本最大的三笔：Pasto wins NO（Pasto 不成立） $527.19（6.0%）；Coppin St. wins NO（Coppin St. 不成立） $523.78（6.0%）；Antigua & Barbuda wins NO（Antigua & Barbuda 不成立） $511.75（5.9%）。
+浮盈最大的是 Richmond wins（+$76.12）。
 
-注意：KXNCAAMBGAME-26NOV11SPCSCAR-SCAR, KXNCAAMBGAME-26NOV11SPCSCAR-SPC 属于同一个事件，合计成本 $254.80，要看它们是对冲还是同向加注。
+注意：KXNCAAWBGAME-26NOV12OKSTTLSA-TLSA, KXNCAAWBGAME-26NOV12OKSTTLSA-OKST 属于同一个事件，合计成本 $514.80，要看它们是对冲还是同向加注。
+
+注意：KXNCAAMBGAME-26NOV12MHUPSU-PSU, KXNCAAMBGAME-26NOV12MHUPSU-MHU 属于同一个事件，合计成本 $258.02，要看它们是对冲还是同向加注。
+
+注意：KXNCAAMBGAME-26NOV12TNTCIND-IND, KXNCAAMBGAME-26NOV12TNTCIND-TNTC 属于同一个事件，合计成本 $258.55，要看它们是对冲还是同向加注。
+
+注意：KXNBAGAME-26NOV12DETWAS-DET, KXNBAGAME-26NOV12DETWAS-WAS 属于同一个事件，合计成本 $255.20，要看它们是对冲还是同向加注。
 
 **确定程度（按隐含胜率）：**
-- **基本确定（≥95%）：** North Carolina Central wins NO（North Carolina Central 不成立）（99.5%）、UMass Lowell wins NO（UMass Lowell 不成立）（99.5%）、Siena wins NO（Siena 不成立）（99.5%）、South Carolina wins YES（South Carolina）（99.5%）、Saint Peter's wins NO（Saint Peter's 不成立）（99.5%）、St. John's wins YES（St. John's）（99.5%）、South Carolina St. wins NO（South Carolina St. 不成立）（99.5%）、Troy wins NO（Troy 不成立）（99.5%）、Wisconsin wins YES（Wisconsin）（99.5%）、UNC Wilmington wins YES（UNC Wilmington）（98.5%）、Cornell wins NO（Cornell 不成立）（97.5%）、Furman wins YES（Furman）（96.5%）、Chicago St. wins NO（Chicago St. 不成立）（95.0%）；合计成本 $3,722.62。
-- **比较稳（90%–95%）：** Sacramento St. wins NO（Sacramento St. 不成立）（94.5%）、Oral Roberts wins NO（Oral Roberts 不成立）（94.5%）、Cal Poly wins NO（Cal Poly 不成立）（94.5%）、UTSA wins NO（UTSA 不成立）（93.5%）、Oakland wins NO（Oakland 不成立）（92.5%）、Portland St. wins NO（Portland St. 不成立）（92.5%）、San Antonio wins YES（San Antonio）（90.5%）；合计成本 $2,423.27。
-- **有不确定性（<90%）：** Los Angeles L wins YES（Los Angeles L）（88.5%）、Chicago St. wins NO（Chicago St. 不成立）（87.5%）、UMass wins NO（UMass 不成立）（81.5%）、South Dakota wins NO（South Dakota 不成立）（77.5%）、Southern Miss wins YES（Southern Miss）（76.5%）、USC wins YES（USC）（76.5%）、Southern Indiana wins NO（Southern Indiana 不成立）（65.5%）、UMass Lowell wins NO（UMass Lowell 不成立）（48.5%）；合计成本 $2,309.40。
+- **基本确定（≥95%）：** Pasto wins NO（Pasto 不成立）（99.5%）、Richmond wins YES（Richmond）（99.5%）、VCU wins NO（VCU 不成立）（99.5%）、Antigua & Barbuda wins NO（Antigua & Barbuda 不成立）（99.5%）、Middle Tennessee wins NO（Middle Tennessee 不成立）（99.5%）、Maryland-Eastern Shore wins NO（Maryland-Eastern Shore 不成立）（99.5%）、Milwaukee wins YES（Milwaukee）（99.5%）、Loyola Maryland wins NO（Loyola Maryland 不成立）（99.5%）、New Orleans wins NO（New Orleans 不成立）（99.5%）、Tennessee-Martin wins NO（Tennessee-Martin 不成立）（99.0%）、Rider wins YES（Rider）（98.5%）、Bowling Green wins YES（Bowling Green）（98.5%）、Clemson wins NO（Clemson 不成立）（98.5%）、Southern University wins NO（Southern University 不成立）（98.5%）、Northern Iowa wins NO（Northern Iowa 不成立）（98.5%）、Columbia wins NO（Columbia 不成立）（98.0%）、Ball St. wins NO（Ball St. 不成立）（98.0%）、Arizona wins NO（Arizona 不成立）（98.0%）、Indiana wins YES（Indiana）（97.5%）、UConn wins YES（UConn）（96.5%）、Tennessee Tech wins NO（Tennessee Tech 不成立）（96.5%）、BYU wins YES（BYU）（96.5%）、Penn St. wins YES（Penn St.）（95.5%）、Mercyhurst wins NO（Mercyhurst 不成立）（95.5%）、Rhode Island wins YES（Rhode Island）（95.5%）；合计成本 $5,603.64。
+- **比较稳（90%–95%）：** Mercer wins NO（Mercer 不成立）（94.5%）、Southern Utah wins NO（Southern Utah 不成立）（94.5%）；合计成本 $516.39。
+- **有不确定性（<90%）：** Coppin St. wins NO（Coppin St. 不成立）（81.5%）、Detroit wins YES（Detroit）（78.5%）、Washington wins NO（Washington 不成立）（78.5%）、Louisiana wins YES（Louisiana）（78.5%）、Howard wins YES（Howard）（78.0%）、Tulsa wins NO（Tulsa 不成立）（77.0%）、Oklahoma St. wins NO（Oklahoma St. 不成立）（76.5%）、UC Riverside wins NO（UC Riverside 不成立）（76.5%）、Oklahoma St. wins YES（Oklahoma St.）（74.5%）、Curacao wins NO（Curacao 不成立）（69.5%）、Western Illinois wins NO（Western Illinois 不成立）（48.0%）、Canisius wins NO（Canisius 不成立）（34.5%）；合计成本 $2,615.51。
 
 ---
-图表文件：`charts/deposits-2026-11-11.png`、`charts/pnl_curve-2026-11-11.png`、`charts/positions-2026-11-11.png`、`charts/total_assets-2026-11-11.png`；审计数据 [data/total_assets.csv](data/total_assets.csv)、[data/total_assets.json](data/total_assets.json)。
+图表文件：`charts/deposits-2026-11-12.png`、`charts/pnl_curve-2026-11-12.png`、`charts/positions-2026-11-12.png`、`charts/total_assets-2026-11-12.png`；审计数据 [data/total_assets.csv](data/total_assets.csv)、[data/total_assets.json](data/total_assets.json)。
 
 ## 如何新增一天
 
